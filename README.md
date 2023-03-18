@@ -1,10 +1,14 @@
-# Irwan Antonio
+# JOHAN
 
-My name is [Irwan Antonio](https://ir001.github.io) born in 2001. I am a Web Developer who loves to learn and read self-development books, and many other knowledge books. I have an interest in continuing to learn about developments in the world of technology which are increasingly developing.
+My name is Johan. I have expertise in Programmer (Senior Software Engineering) with more than 15 years of experience. I am capable of problem solving errors and coding problems, working individually and in teams.
 
-Since junior high school my interest in the IT world has started to grow. I graduated from one of the favorite schools in the city of Purbalingga, namely SMK Negeri 1 Purbalingga. The reason I took the Software Engineering (RPL) major was to continue to develop my interest in IT.
+For more than 1 year working as a Freelancer (Projects Developer), I have worked on various projects. I am a lifelong learner who is willing to learn new things anytime quickly and skillfully.
 
-And in the future I want to contribute to the world of technology with the skills, knowledge and experience I have. I hope that my contribution will be of use to many people.
+Since high school, my interest in IT has started to grow, and have mastered all the basic techniques from OS (DOS 6.2), to Web Server Programming now.
+
+And in the future I want to contribute to the world of technology with the skills, knowledge and experience I have. I hope my contribution can be useful for many people.
+
+If anyone is interested in learning and exploring programming, I will help as much as possible.
 
 ## Motto
 
@@ -21,6 +25,5 @@ And in the future I want to contribute to the world of technology with the skill
 
 ## Follow Me on :
 
-[Instagram](https://www.instagram.com/hjkwz) ,
-[Facebook](https://www.facebook.com/ir001) ,
-[LinkedIn](https://www.linkedin.com/in/irwan-antonio)
+[Facebook](https://www.facebook.com/pmp094ql) ,
+
