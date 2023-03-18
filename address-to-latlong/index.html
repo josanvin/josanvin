@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Address To Latitude Longitude - Ir001</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="max-w-2xl mx-auto px-5 mt-5">
+      <div>
+        <div class="flex justify-between items-center">
+          <h1 class="text-2xl text-gray-900 font-weight-bold font-medium">
+            Get Latitude Longitude from Address
+          </h1>
+          <a href="/" class="text-gray-200 hover:text-gray-500">&larr; Back</a>
+        </div>
+        <p class="my-3 text-sm text-gray-500">
+          By using this geographic tool you can get the lat long coordinates
+          from an address. Please type the address which would include the name
+          of the city/town, state and street name to get more accurate lat long
+          value. Also, the gps coordinates of the address will be calculated
+          below.
+        </p>
+        <form id="form-get-latlong">
+          <div class="mb-3">
+            <label class="text-md text-gray-500 block">Address</label>
+            <input
+              type="text"
+              name="c1"
+              placeholder="Find Address"
+              class="px-4 py-2 border rounded w-full"
+            />
+            <input type="hidden" name="action" value="gpcm" />
+          </div>
+          <div class="mb-3">
+            <button
+              type="submit"
+              id="btn-submit"
+              class="
+                px-4
+                py-2
+                bg-indigo-500
+                text-white
+                font-medium
+                rounded
+                w-full
+              "
+            >
+              Find
+            </button>
+          </div>
+        </form>
+        <div class="mb-3">
+          <p class="block text-xl font-medium text-gray-500 text-center">
+            Result
+          </p>
+          <div class="flex justify-between items-center my-3" id="result"></div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        //
+        $("#form-get-latlong").submit(function (e) {
+          e.preventDefault();
+          let urlEncoded = $(this).serialize();
+          $.ajax({
+            type: "GET",
+            url: "https://nominatim.openstreetmap.org/search?",
+            data: {
+              q: $("input[name=c1]").val(),
+              format: "json",
+            },
+            dataType: "json",
+            success: function (response) {
+              try {
+                let latitude = response[0].lat;
+                let longitude = response[0].lon;
+                $("#result").html(`
+                          <div class="w-full mr-1">
+                              <label class="text-sm text-gray-500 block">Latitude</label>
+                              <input
+                                  type="text"
+                                  name="c1"
+                                  placeholder="Latitude"
+                                  value="${latitude}"
+                                  class="px-4 py-2 border rounded w-full"
+                              />
+                              </div>
+                              <div class="w-full">
+                              <label class="text-sm text-gray-500 block">Longitude</label>
+                              <input
+                                  type="text"
+                                  name="c1"
+                                  placeholder="Longitude"
+                                  value="${longitude}"
+                                  class="px-4 py-2 border rounded w-full"
+                              />
+                          </div>
+                      `);
+              } catch (err) {
+                $("#result").html(`
+                  <div class="w-full">
+                      <p class="text-red-500 font-medium text-center">
+                          Error : ${err}
+                      </p>
+                  </div>
+                  `);
+              }
+            },
+            error: function (xhr, status, err) {
+              $("#result").html(`
+                  <div class="w-full">
+                      <p class="text-red-500 font-medium text-center">
+                          Not Found! Try new keyword
+                      </p>
+                      <p class="text-white font-medium text-center">
+                          Error : ${err}
+                      </p>
+                  </div>
+                  `);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
