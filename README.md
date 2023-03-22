@@ -14,12 +14,19 @@ If anyone is interested in learning and exploring programming, I will help as mu
 
 ```php
 <?php
-    while(!success()){
-        tryAgain();
-        if(dead()){
-            break;
-        }
+    while(!succeed){
+        try();
+        learn();        
+        if(found()){
+            expand;
+            new_method();
+        } else {
+            rest();
+            coffee_first();
+            continued();
+        }        
     }
+?>
 
 ```
 
