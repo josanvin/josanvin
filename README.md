@@ -32,5 +32,5 @@ If anyone is interested in learning and exploring programming, I will help as mu
 
 ## Follow Me on :
 
-[Facebook](https://www.facebook.com/pmp094ql) ,
+[Facebook](https://www.facebook.com/pmp094ql) , Donate (https://sociabuzz.com/johanjkt999/donate) ,
 
