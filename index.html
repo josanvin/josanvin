@@ -130,6 +130,61 @@
     .lang-en {
       display: none;
     }
+	    /* Gaya untuk background area layanan secara keseluruhan */
+  .service-area-bg {
+    background-color: #f0f8ff; /* Warna dasar biru muda */
+    /* Menambahkan motif: Anda bisa ganti URL gambar dan posisi/ukuran */
+    background-image: url('https://www.transparenttextures.com/patterns/dust-and-scratches.png'); /* Contoh motif */
+    background-repeat: repeat; /* Mengulang motif */
+    padding: 50px 0; /* Memberikan padding agar konten tidak terlalu mepet tepi */
+    border-radius: 15px; /* Sedikit lengkungan di sudut */
+    margin: 20px auto; /* Margin di luar, agar ada ruang */
+    max-width: 1200px; /* Batasi lebar agar tidak terlalu besar */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  }
+
+  /* Gaya untuk setiap kotak layanan */
+  .service {
+    background-color: #ffffff; /* Latar belakang putih untuk setiap layanan */
+    border: 1px solid #e3f2fd;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin: 15px; /* Memberikan jarak antar layanan */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek hover */
+  }
+
+  .service:hover {
+    transform: translateY(-5px); /* Sedikit naik saat di-hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Gaya untuk ikon */
+  .service i {
+    font-size: 3em;
+    color: #007bff; /* Warna ikon */
+    margin-bottom: 20px;
+  }
+
+  /* Gaya untuk teks dalam layanan */
+  .service-text h3 {
+    color: #333333;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+  }
+
+  .service-text p {
+    color: #666666;
+    line-height: 1.6;
+    font-size: 0.95em;
+  }
+
+  /* Gaya untuk slider (jika menggunakan Owl Carousel, sesuaikan dengan CSS-nya) */
+  .service-slider {
+    /* Owl Carousel biasanya memiliki gaya sendiri untuk ini */
+    /* Pastikan CSS dari Owl Carousel Anda sudah terhubung */
+  }
   </style>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
@@ -164,7 +219,8 @@
             <ul class="menu-list">
               <li><a href="#home">Home</a></li>
               <li><a href="#about">About</a></li>
-              <li><a href="#resume">Projects</a></li>
+			  <li><a href="#service">Services</a></li>	
+              <li><a href="#resume">Projects</a></li>			  
               <li><a href="#works">Testimoni</a></li>
               <!-- <li><a href="#works">Works</a></li> -->
               <li><a href="#contact">Contact</a></li>
@@ -338,41 +394,41 @@
           </ul>
         </div>
         <!-- services -->
-        <!-- <div class="service-slider owl-carousel spad pb-0">
-				
-				<div class="service">
-					<i class="ti-settings"></i>
-					<div class="service-text">
-						<h3>Development</h3>
-						<p>Work efficiently and effectively to make good quality from our company</p>
-					</div>
-				</div>
-				
-				<div class="service">
-					<i class="ti-medall"></i>
-					<div class="service-text">
-						<h3>Best</h3>
-						<p>work with the best coder to lift higher quality and quantity</p>
-					</div>
-				</div>
-				
-				<div class="service">
-					<i class="ti-heart"></i>
-					<div class="service-text">
-						<h3>Love</h3>
-						<p>build with love and care from us</p>
-					</div>
-				</div>
-				
-				<div class="service">
-					<i class="ti-key"></i>
-					<div class="service-text">
-						<h3>Security</h3>
-						<p>The best and most trusted protection to keep your database safety</p>
-					</div>
-				</div>
-			</div> -->
+<div class="service-area-bg">
+  <div class="service-slider owl-carousel spad pb-0">
+    <div class="service">
+      <i class="ti-settings"></i>
+      <div class="service-text">
+        <h3>Development</h3>
+        <p>Dedicated to delivering high-quality solutions with maximum efficiency and continuous improvement.</p>
       </div>
+    </div>
+    
+    <div class="service">
+      <i class="ti-medall"></i>
+      <div class="service-text">
+        <h3>Excellence in Collaboration</h3>
+        <p>Working alongside top-tier professionals to elevate our quality and quantity standards.</p>
+      </div>
+    </div>
+    
+    <div class="service">
+      <i class="ti-heart"></i>
+      <div class="service-text">
+        <h3>Passion and Dedication</h3>
+        <p>Crafting solutions with a genuine commitment to excellence and meticulous attention to detail.</p>
+      </div>
+    </div>
+    
+    <div class="service">
+      <i class="ti-key"></i>
+      <div class="service-text">
+        <h3>Security (Database)</h3>
+        <p>Ensuring the utmost protection and integrity to safeguard your database with trusted security measures.</p>
+      </div>
+    </div>
+  </div>
+</div>
     </section>
     <!-- About section end -->
 
