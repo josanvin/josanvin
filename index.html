@@ -56,87 +56,81 @@
       integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
       crossorigin="anonymous"
     />
-	  <style>
-  /* Mengatur tampilan keseluruhan */
-  .profile-container {
-    display: flex; /* Mengaktifkan Flexbox */
-    flex-wrap: wrap; /* Memungkinkan wrap jika layar kecil */
-    font-family: Arial, sans-serif;
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color: #f0f8ff; /* Warna latar belakang biru muda */
-    border: 1px solid #b3e5fc;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  }
-
-  /* Gaya untuk setiap kolom (kiri dan kanan) */
-  .profile-column {
-    flex: 1; /* Mengatur setiap kolom agar memiliki lebar yang sama */
-    padding: 1.5rem;
-    min-width: 300px; /* Lebar minimum untuk responsivitas */
-  }
-
-  /* Judul dan Subjudul */
-  .profile-title {
-    text-align: center;
-    color: #01579b;
-    font-size: 2.5em;
-    margin-bottom: 0.5rem;
-  }
-  .profile-subtitle {
-    text-align: center;
-    color: #4fc3f7;
-    font-weight: normal;
-    font-size: 1.2em;
-    margin-top: 0;
-    margin-bottom: 2rem;
-  }
-
-  /* Garis pemisah horizontal */
-  .profile-divider {
-    border: none;
-    height: 1px;
-    background-color: #81d4fa;
-    margin: 2rem auto;
-    width: 80%;
-  }
-
-  /* Gaya untuk teks paragraf */
-  .profile-text {
-    text-align: justify;
-    line-height: 1.8;
-    color: #212121;
-    margin-bottom: 1.5rem;
-    font-size: 1em;
-  }
-  
-  /* Gaya untuk teks yang ditonjolkan */
-  .highlight {
-    font-weight: bold;
-    color: #0d47a1;
-  }
-  
-  /* Garis pemisah vertikal antara dua kolom */
-  .column-divider {
-    width: 1px;
-    background-color: #b3e5fc;
-    margin: 1rem;
-  }
-
-  /* Responsivitas: Tampilan kolom bertumpuk di layar kecil */
-  @media (max-width: 768px) {
+  <style>
+    /* Mengatur tampilan keseluruhan */
     .profile-container {
-      flex-direction: column;
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #e0f7fa; /* Warna biru muda */
+      border: 1px solid #b3e5fc;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      position: relative; /* Penting untuk posisi tombol switch */
     }
-    .column-divider {
-      width: 100%;
+
+    /* Gaya untuk tombol switch */
+    .language-switch {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #00796b;
+      background-color: #009688;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .language-switch:hover {
+      background-color: #00796b;
+      transform: scale(1.05);
+    }
+
+    /* Judul dan Subjudul */
+    .profile-title {
+      text-align: center;
+      color: #01579b;
+      font-size: 2.5em;
+      margin-bottom: 0.5rem;
+    }
+    .profile-subtitle {
+      text-align: center;
+      color: #4fc3f7;
+      font-weight: normal;
+      font-size: 1.2em;
+      margin-top: 0;
+      margin-bottom: 2rem;
+    }
+
+    /* Garis pemisah */
+    .profile-divider {
+      border: none;
       height: 1px;
-      margin: 1rem 0;
+      background-color: #81d4fa;
+      margin: 2rem 0;
     }
-  }
-</style>
+
+    /* Paragraf dan penekanan teks */
+    .profile-text {
+      text-align: justify;
+      line-height: 1.8;
+      color: #212121;
+      margin-bottom: 1.5rem;
+      font-size: 1em;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #0d47a1;
+    }
+
+    /* Menyembunyikan konten bahasa Inggris secara default */
+    .lang-en {
+      display: none;
+    }
+  </style>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
       integrity="sha512-F5QTlBqZlvuBEs9LQPqc1iZv2UMxcVXezbHzomzS6Df4MZMClge/8+gXrKw2fl5ysdk4rWjR0vKS7NNkfymaBQ=="
@@ -217,36 +211,10 @@
             <!-- ID Version -->
             
 <div class="profile-container">
-  <div class="profile-column">
-    <h1 class="profile-title">Johan</h1>
-    <h3 class="profile-subtitle">Senior Software Engineer</h3>
-    
-    <hr class="profile-divider">
-
-    <p class="profile-text">
-      My name is <span class="highlight">Johan</span>. I have expertise as a <span class="highlight">Programmer (Senior Software Engineering)</span> with more than <span class="highlight">25 years of experience</span>. I am a graduate of <span class="highlight">Bina Nusantara University with a Bachelor's degree in Information Systems</span>. I am capable of problem-solving errors and coding problems, working both individually and in teams.
-    </p>
-    
-    <p class="profile-text">
-      For more than <span class="highlight">5 years</span>, I have been working as a <span class="highlight">Freelancer (Projects Developer)</span> on various projects. I am a lifelong learner who is willing to learn new things anytime, quickly and skillfully.
-    </p>
-    
-    <p class="profile-text">
-      My interest in IT started to grow since high school, and I have mastered all the basic techniques from <span class="highlight">OS Foxpro/Visual Basic</span> to modern <span class="highlight">Web Server Programming</span>.
-    </p>
-    
-    <p class="profile-text">
-      In the future, I want to contribute to the world of technology with the skills, knowledge, and experience I have, hoping my contribution can be useful for many people.
-    </p>
-    
-    <p class="profile-text">
-      If anyone is interested in learning and exploring programming, I will help as much as possible.
-    </p>
-  </div>
   
-  <div class="column-divider"></div>
+  <button id="lang-button" class="language-switch" onclick="toggleLanguage()">English</button>
 
-  <div class="profile-column">
+  <div class="lang-id">
     <h1 class="profile-title">Johan</h1>
     <h3 class="profile-subtitle">Senior Software Engineer</h3>
     
@@ -272,7 +240,54 @@
       Jika ada yang tertarik untuk belajar dan mendalami pemrograman, saya akan membantu semaksimal mungkin.
     </p>
   </div>
+  
+  <div class="lang-en">
+    <h1 class="profile-title">Johan</h1>
+    <h3 class="profile-subtitle">Senior Software Engineer</h3>
+    
+    <hr class="profile-divider">
+
+    <p class="profile-text">
+      My name is <span class="highlight">Johan</span>. I have expertise as a <span class="highlight">Programmer (Senior Software Engineering)</span> with more than <span class="highlight">25 years of experience</span>. I am a graduate of <span class="highlight">Bina Nusantara University with a Bachelor's degree in Information Systems</span>. I am capable of problem-solving errors and coding problems, working both individually and in teams.
+    </p>
+    
+    <p class="profile-text">
+      For more than <span class="highlight">5 years</span>, I have been working as a <span class="highlight">Freelancer (Projects Developer)</span> on various projects. I am a lifelong learner who is willing to learn new things anytime, quickly and skillfully.
+    </p>
+    
+    <p class="profile-text">
+      My interest in IT started to grow since high school, and I have mastered all the basic techniques from <span class="highlight">OS Foxpro/Visual Basic</span> to modern <span class="highlight">Web Server Programming</span>.
+    </p>
+    
+    <p class="profile-text">
+      In the future, I want to contribute to the world of technology with the skills, knowledge, and experience I have, hoping my contribution can be useful for many people.
+    </p>
+    
+    <p class="profile-text">
+      If anyone is interested in learning and exploring programming, I will help as much as possible.
+    </p>
+  </div>
 </div>
+
+<script>
+  function toggleLanguage() {
+    const langIdDiv = document.querySelector('.lang-id');
+    const langEnDiv = document.querySelector('.lang-en');
+    const langButton = document.getElementById('lang-button');
+    
+    if (langIdDiv.style.display !== 'none') {
+      // Saat ini dalam Bahasa Indonesia, beralih ke Inggris
+      langIdDiv.style.display = 'none';
+      langEnDiv.style.display = 'block';
+      langButton.textContent = 'Indonesia';
+    } else {
+      // Saat ini dalam Bahasa Inggris, beralih ke Indonesia
+      langIdDiv.style.display = 'block';
+      langEnDiv.style.display = 'none';
+      langButton.textContent = 'English';
+    }
+  }
+</script>
             
           </div>
         </div>
