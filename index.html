@@ -130,61 +130,70 @@
     .lang-en {
       display: none;
     }
-	    /* Gaya untuk background area layanan secara keseluruhan */
-  .service-area-bg {
-    background-color: #f0f8ff; /* Warna dasar biru muda */
-    /* Menambahkan motif: Anda bisa ganti URL gambar dan posisi/ukuran */
-    background-image: url('https://www.transparenttextures.com/patterns/dust-and-scratches.png'); /* Contoh motif */
-    background-repeat: repeat; /* Mengulang motif */
-    padding: 50px 0; /* Memberikan padding agar konten tidak terlalu mepet tepi */
-    border-radius: 15px; /* Sedikit lengkungan di sudut */
-    margin: 20px auto; /* Margin di luar, agar ada ruang */
-    max-width: 1200px; /* Batasi lebar agar tidak terlalu besar */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Efek bayangan */
-  }
+/* Container utama untuk kartu-kartu */
+.service-container {
+  display: flex; /* Mengaktifkan Flexbox */
+  flex-wrap: wrap; /* Memungkinkan kartu untuk "melipat" ke baris baru */
+  gap: 20px; /* Jarak antar kartu */
+  justify-content: center; /* Memusatkan kartu-kartu */
+  padding: 20px 0;
+}
 
-  /* Gaya untuk setiap kotak layanan */
-  .service {
-    background-color: #ffffff; /* Latar belakang putih untuk setiap layanan */
-    border: 1px solid #e3f2fd;
-    border-radius: 10px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    margin: 15px; /* Memberikan jarak antar layanan */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek hover */
-  }
+/* Styling untuk setiap kartu */
+.service-card {
+  background-color: #ffffff; /* Latar belakang putih untuk kartu */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+  padding: 30px;
+  display: flex;
+  flex-direction: column; /* Mengatur item (ikon, teks) secara vertikal */
+  align-items: center; /* Memusatkan konten secara horizontal */
+  text-align: center;
+  max-width: 280px; /* Batas lebar maksimum untuk kartu */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek transisi halus */
+}
 
-  .service:hover {
-    transform: translateY(-5px); /* Sedikit naik saat di-hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  }
+/* Efek saat dihover */
+.service-card:hover {
+  transform: translateY(-10px); /* Bergerak naik saat dihover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
-  /* Gaya untuk ikon */
-  .service i {
-    font-size: 3em;
-    color: #007bff; /* Warna ikon */
-    margin-bottom: 20px;
-  }
+/* Styling untuk ikon */
+.card-icon svg {
+  color: #007bff; /* Warna biru untuk ikon */
+  width: 48px;
+  height: 48px;
+  margin-bottom: 15px;
+}
 
-  /* Gaya untuk teks dalam layanan */
-  .service-text h3 {
-    color: #333333;
-    margin-bottom: 10px;
-    font-size: 1.5em;
-  }
+/* Styling untuk judul (h3) */
+.card-text h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  color: #1a1a1a;
+}
 
-  .service-text p {
-    color: #666666;
-    line-height: 1.6;
-    font-size: 0.95em;
-  }
+/* Styling untuk deskripsi (p) */
+.card-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
 
-  /* Gaya untuk slider (jika menggunakan Owl Carousel, sesuaikan dengan CSS-nya) */
-  .service-slider {
-    /* Owl Carousel biasanya memiliki gaya sendiri untuk ini */
-    /* Pastikan CSS dari Owl Carousel Anda sudah terhubung */
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+  .service-container {
+    flex-direction: column; /* Mengubah tata letak menjadi kolom di layar kecil */
+    align-items: center; /* Memusatkan kartu */
   }
+  
+  .service-card {
+    max-width: 90%; /* Mengatur lebar kartu menjadi 90% dari lebar layar */
+    width: 100%; /* Memastikan lebar penuh di dalam container */
+  }
+}
   </style>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
@@ -394,35 +403,55 @@
           </ul>
         </div>
         <!-- services -->
-<div class="service-area-bg">
-  <div class="service-slider owl-carousel spad pb-0">
-    <div class="service">
-      <i class="ti-settings"></i>
-      <div class="service-text">
+<div class="service-area">
+  <div class="service-container">
+    <div class="service-card">
+      <div class="card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83l-2.83 2.83a2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1.01.6l-.36.71a2 2 0 0 1-2.22 0l-.36-.71a1.65 1.65 0 0 0-1.01-.6 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0l-2.83-2.83a2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-.6-1.01l-.71-.36a2 2 0 0 1 0-2.22l.71-.36a1.65 1.65 0 0 0 .6-1.01 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83l2.83-2.83a2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33 1.65 1.65 0 0 0 1.01-.6l.36-.71a2 2 0 0 1 2.22 0l.36.71a1.65 1.65 0 0 0 1.01.6 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0l2.83 2.83a2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82 1.65 1.65 0 0 0 .6 1.01l.71.36a2 2 0 0 1 0 2.22l-.71.36a1.65 1.65 0 0 0-.6 1.01z"></path>
+        </svg>
+      </div>
+      <div class="card-text">
         <h3>Development</h3>
         <p>Dedicated to delivering high-quality solutions with maximum efficiency and continuous improvement.</p>
       </div>
     </div>
     
-    <div class="service">
-      <i class="ti-medall"></i>
-      <div class="service-text">
+    <div class="service-card">
+      <div class="card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award">
+          <circle cx="12" cy="8" r="7"></circle>
+          <path d="M16.52 14.88a10.6 10.6 0 0 1-9.04 0"></path>
+          <path d="M12 21.5c-3.77 0-6.85-2.86-7.85-6.52A10.6 10.6 0 0 1 12 5a10.6 10.6 0 0 1 7.85 9.98"></path>
+        </svg>
+      </div>
+      <div class="card-text">
         <h3>Excellence in Collaboration</h3>
         <p>Working alongside top-tier professionals to elevate our quality and quantity standards.</p>
       </div>
     </div>
     
-    <div class="service">
-      <i class="ti-heart"></i>
-      <div class="service-text">
+    <div class="service-card">
+      <div class="card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.68l-1.06-1.07a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+      </div>
+      <div class="card-text">
         <h3>Passion and Dedication</h3>
         <p>Crafting solutions with a genuine commitment to excellence and meticulous attention to detail.</p>
       </div>
     </div>
     
-    <div class="service">
-      <i class="ti-key"></i>
-      <div class="service-text">
+    <div class="service-card">
+      <div class="card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+      </div>
+      <div class="card-text">
         <h3>Security (Database)</h3>
         <p>Ensuring the utmost protection and integrity to safeguard your database with trusted security measures.</p>
       </div>
