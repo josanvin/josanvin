@@ -249,6 +249,77 @@ h2, h3 {
 .skills-list-full {
     padding: 0 15px; /* Memberi sedikit padding agar tidak menempel di pinggir */
 }
+	  /* Gaya untuk bagian resume */
+.resume-section {
+    background-color: #90ee90; /* Warna hijau terang */
+    padding: 50px 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Gaya untuk daftar proyek */
+.project-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.project-list li {
+    background-color: #ffffff;
+    border-left: 5px solid #28a745; /* Garis hijau di samping */
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-list li:hover {
+    transform: translateY(-5px);
+}
+
+.project-list li i {
+    color: #28a745; /* Warna ikon hijau */
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.project-list li span {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #000;
+    margin-top: 5px;
+}
+
+.project-details {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #555;
+    text-align: justify; /* Menerapkan teks rata kanan-kiri */
+}
+
+.project-list li a {
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 5px;
+}
   </style>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
@@ -503,32 +574,77 @@ h2, h3 {
     <!-- About section end -->
 
     <!-- Resume section start -->
-    <section class="resume-section spad" id="resume">
-      <div class="container">
-        <div class="section-title">
-          <p>Project-Projects</p>
-        </div><b>
-        <div class="row">
-          <div class="col-lg-10 col-xl-9 offset-lg-2 offset-xl-2">
-            <!-- Review item -->
-            🎯Mini Market System ( Sudah Banyak Client/Penggunanya )<br><br>
-            (Stock, Transaksi Penjualan, Pembelian, Piutang, Hutang, Payment, Invoice, Laporan, etc)<br><br>
-            🎯Container System (Transaksi, Invoice, Payment, Laporan, etc).<br><br>
-            🎯Rental System<br><br>
-            🎯Recruitment System + Test Online<br><br>
-            🎯Laundry System<br><br>
-            🎯Koperasi System<br><br>
-            🎯SKCK System (Kepolisian)<br><br>
-            🎯E-Commerce System (Pembelian s.d Invoice (Upload Bukti))<br><br>
-            🎯System Pegawai<br><br>
-            🎯Aset System<br><br>
-            🎯Catering System<br><br>
-            🎯Resto System <a href="https://josanvinresto.000webhostapp.com">(resto online (testing))</a><br><br>
-            🎯Reservation Hotel System(online) <a href="https://josanvin999.000webhostapp.com">(Reservation Hotel Online)</a><br><br>
-          </div></b>
-        </div>
-      </div>
-    </section>
+<section class="resume-section spad" id="resume">
+  <div class="container">
+    <div class="section-title">
+      <h2>All Projects</h2>
+    </div>
+    <div class="project-list-container">
+      <ul class="project-list">
+        <li>
+          <i class="fas fa-store"></i> 
+          <span>Sistem Minimarket (Sudah Banyak Klien/Penggunanya)</span>
+          <p class="project-details">
+            (Manajemen Stok, Transaksi Penjualan, Pembelian, Piutang, Hutang, Pembayaran, Faktur, Laporan, dll)
+          </p>
+        </li>
+        <li>
+          <i class="fas fa-box-open"></i> 
+          <span>Sistem Kontainer</span>
+          <p class="project-details">
+            (Transaksi, Faktur, Pembayaran, Laporan, dll)
+          </p>
+        </li>
+        <li>
+          <i class="fas fa-car-side"></i> 
+          <span>Sistem Penyewaan (Rental System)</span>
+        </li>
+        <li>
+          <i class="fas fa-user-tie"></i> 
+          <span>Sistem Rekrutmen + Tes Online</span>
+        </li>
+        <li>
+          <i class="fas fa-tshirt"></i> 
+          <span>Sistem Laundry</span>
+        </li>
+        <li>
+          <i class="fas fa-users"></i> 
+          <span>Sistem Koperasi</span>
+        </li>
+        <li>
+          <i class="fas fa-id-card-alt"></i> 
+          <span>Sistem SKCK (Kepolisian)</span>
+        </li>
+        <li>
+          <i class="fas fa-shopping-cart"></i> 
+          <span>Sistem E-Commerce (Pembelian s.d. Faktur (Unggah Bukti))</span>
+        </li>
+        <li>
+          <i class="fas fa-user-friends"></i> 
+          <span>Sistem Pegawai</span>
+        </li>
+        <li>
+          <i class="fas fa-briefcase"></i> 
+          <span>Sistem Aset</span>
+        </li>
+        <li>
+          <i class="fas fa-utensils"></i> 
+          <span>Sistem Katering</span>
+        </li>
+        <li>
+          <i class="fas fa-concierge-bell"></i> 
+          <span>Sistem Restoran</span>
+          <a href="https://josanvinresto.000webhostapp.com">(resto online (testing))</a>
+        </li>
+        <li>
+          <i class="fas fa-hotel"></i> 
+          <span>Sistem Reservasi Hotel (online)</span>
+          <a href="https://josanvin999.000webhostapp.com">(Reservasi Hotel Online)</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
     <!-- Resume section end -->
 
     <!-- Portfolio section start -->
