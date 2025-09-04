@@ -336,6 +336,34 @@ h2, h3 {
             transform: scale(1.1);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
+	        /* TV Frame Style */
+      .tv-frame {
+        position: relative;
+        background: #2c2c2c; /* Warna casing TV */
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3), inset 0 0 15px rgba(0,0,0,0.5);
+        border: 2px solid #1a1a1a;
+      }
+
+      .tv-screen {
+        position: relative;
+        background: #000;
+        border-radius: 5px;
+        overflow: hidden; /* Memastikan iframe tidak keluar dari bingkai layar */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.7);
+      }
+
+      .tv-stand {
+        width: 25%;
+        height: 20px;
+        background: #1e1e1e;
+        margin: 0 auto;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+      }
+      /* End of TV Frame Style */
   </style>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
@@ -676,12 +704,16 @@ h2, h3 {
         </div>
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
-            <div class="embed-responsive embed-responsive-16by9 wow fadeInUp" data-wow-delay="0.2s">
-              <iframe 
-                class="embed-responsive-item" 
-                src="https://drive.google.com/file/d/1NjO0gurlajYODx-9D5y66Sl1psSf-JDi/preview" 
-                allowfullscreen>
-              </iframe>
+            <div class="tv-frame wow fadeInUp" data-wow-delay="0.2s">
+              <div class="tv-screen">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe 
+                    class="embed-responsive-item" 
+                    src="https://drive.google.com/file/d/1NjO0gurlajYODx-9D5y66Sl1psSf-JDi/preview" 
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
             </div>
             <div class="text-center mt-4 wow fadeInUp" data-wow-delay="0.3s">
               <p style="font-weight: 600; font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">
